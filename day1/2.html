@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .box input {
+            width: 100%;
+            margin-bottom: 5px;
+            padding: 5px;
+            font-size: 18px;
+        }
+
+        .box .button {
+            width: 40%;
+            margin-bottom: 5px;
+            padding: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input type="text" id="result" placeholder="0" disabled>
+        <button class="button" onclick="clear()">C</button>
+        <button class="button" onclick="del()">del</button>
+        <button class="button" onclick="addNumber(1)">1</button>
+        <button class="button" onclick="addNumber(2)">2</button>
+        <button class="button" onclick="addNumber(3)">3</button>
+        <button class="button" onclick="append('+')">+</button>
+        <button class="button" onclick="addNumber(4)">4</button>
+        <button class="button" onclick="addNumber(5)">5</button>
+        <button class="button" onclick="addNumber(6)">6</button>
+        <button class="button" onclick="append('-')">-</button>
+        <button class="button" onclick="addNumber(7)">7</button>
+        <button class="button" onclick="addNumber(8)">8</button>
+        <button class="button" onclick="addNumber(9)">9</button>
+        <button class="button" onclick="append('*')">*</button>
+        <button class="button" onclick="addNumber(0)">0</button>
+        <button class="button" onclick="sum()">=</button>
+        <button class="button" onclick="append('/')">/</button>
+    </div>
+
+    <script>
+        let num = '';
+        let result = document.getElementById('result');
+
+        function addNumber(n) {
+            num += n;
+            result.value = num;
+        }
+
+        function append(n) {
+            num += n;
+            result.value = num;
+        }
+
+        function sum() {
+            num = eval(num);
+            result.value = num;
+        }
+
+        function clear() {
+            num = '';
+            result.value = 0;
+        }
+
+        function del() {
+            num = num.slice(0, -1);
+            result.value = num;
+        }
+    </script>
+</body>
+
+</html>
